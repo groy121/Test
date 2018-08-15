@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>CBP-Enovia Web Service API Demo</title>
+    <link rel="stylesheet" href="./app.css">
+</head>
+
+<body class="fix-header fix-sidebar">
+    <!-- Preloader -->
+    <div class="preloader">
+        <!-- Loader -->
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke="#70c542" />
+            </svg>
+        </div>
+        <!-- End Loader -->
+    </div>
+    <!-- End Preloader -->
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+        <!-- header header  -->
+        <div class="header">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- Logo -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo text -->
+                        <span>CBP ENOVIA</span>
+                    </a>
+                </div>
+                <!-- End Logo -->
+                <div class="navbar-collapse">
+                    <!-- toggle and nav items -->
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                        <!-- This is  -->
+                        <li class="nav-item">
+                            <a class="nav-link nav-toggler hidden-md-up text-muted  " href="javascript:void(0)">
+                                <i class="mdi mdi-menu"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item m-l-10">
+                            <a class="nav-link sidebartoggler hidden-sm-down text-muted  " href="javascript:void(0)">
+                                <i class="ti-menu"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- User profile -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- Profile -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="#" alt="user" class="profile-pic" />
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right animated zoomIn">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-user"></i> Profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-power-off"></i> Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End header header -->
+        <!-- Left Sidebar  -->
+        <div class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="nav-divider"></li>
+                        <li class="nav-label">Home</li>
+                        <li>
+                            <a class="has-arrow  " href="#" aria-expanded="false" id="dashboard">
+                                <span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-label">API's</li>
+                        <li>
+                            <a class="has-arrow  " href="#" aria-expanded="false" id="create">
+                                <span class="hide-menu">Create</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">A</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow  " href="#" aria-expanded="false" id="update">
+                                <span class="hide-menu">Update</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">B</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow  " href="#" aria-expanded="false" id="view">
+                                <span class="hide-menu">View</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">C</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow  " href="#" aria-expanded="false" id="delete">
+                                <span class="hide-menu">Delete</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">D</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </div>
+        <!-- End Left Sidebar  -->
+        <!-- Page wrapper  -->
+        <div class="page-wrapper">
+            <!-- Bread crumb -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-primary">
+                        <span id="opened"></span>
+                    </h3>
+                </div>
+            </div>
+            <!-- End Bread crumb -->
+            <!-- Container fluid  -->
+            <div class="main-body">
+                <!-- Start Page Content -->
+                <div class="dashboard">
+                    <div class="dashboard-body">
+
+                    </div>
+                </div>
+                <div class="create">
+                    <div class="create-body">
+                        <form id="createForm" method="post" id="createForm">
+                            <div class="input">
+                                <div class="label">
+                                    Type:
+                                </div>
+                                <input type="text" name="type" id="">
+                            </div>
+                            <div class="input">
+                                <div class="label">
+                                    Name:
+                                </div>
+                                <input type="text" name="name" id="">
+                            </div>
+                            <div class="input">
+                                <div class="label">
+                                    Revision:
+                                </div>
+                                <input type="text" name="revision" id="">
+                            </div>
+                            <div class="input">
+                                <div class="label">
+                                    Policy:
+                                </div>
+                                <input type="text" name="policy" id="">
+                            </div>
+                            <div class="input">
+                                <div class="label">
+                                    Vault:
+                                </div>
+                                <input type="text" name="vault" id="">
+                            </div>
+                            <div class="input">
+                                <input type="submit" name="" id="" class="submit" value="Create">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="update">
+                    <div class="update-body">
+                        update-body
+                    </div>
+                </div>
+                <div class="view">
+                    <div class="view-body">
+                        View body
+                    </div>
+                </div>
+                <div class="delete">
+                    <div class="delete-body">
+                        delete body
+                    </div>
+                </div>
+                <!-- End PAge Content -->
+            </div>
+            <!-- End Container fluid  -->
+            <!-- footer -->
+            <footer class="footer"> © 2018 CBP ENOVIA TRAINING BATCH</footer>
+            <!-- End footer -->
+        </div>
+        <!-- End Page wrapper  -->
+    </div>
+    <!-- End Wrapper -->
+    <script src="./app.js"></script>
+</body>
+
+</html>
