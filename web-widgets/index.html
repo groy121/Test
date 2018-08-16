@@ -1,0 +1,37 @@
+<html>
+
+<head>
+  <title>Web Component Part 2</title>
+</head>
+
+<body>
+  <people-controller></people-controller>
+  <input type="text" onchange="updateName(this)" placeholder="Name">
+  <input type="text" onchange="updateAddress(this)" placeholder="Address">
+  <input type="checkbox" onchange="toggleAdminStatus(this)" placeholder="Name">
+  <user-card username="Ayush" address="Indore, India" is-admin user-id="1"></user-card>
+
+  <my-widget myname="Gaurav" trigram="GRY3"></my-widget>
+
+  <my-widget-custom uname="Sameer" utrigram="I24"></my-widget-custom>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.0.14/webcomponents-hi.js"></script>
+  <link rel="import" href="./components/PeopleController/PeopleController.html">
+  <script src="./components/UserCard/UserCard.js"></script>
+  <script>
+    function updateAddress(elem) {
+      document.querySelector('user-card').setAttribute('address', elem.value);
+    }
+
+    function updateName(elem) {
+      document.querySelector('user-card').setAttribute('username', elem.value);
+    }
+
+    function toggleAdminStatus(elem) {
+      document.querySelector('user-card').setAttribute('is-admin', elem.checked);
+    }
+  </script>
+  <script src="./components/my-widget/my-widget.js"></script>
+  <script src="./components/my-widget-custom/my-widget-custom.js"></script>
+</body>
+
+</html>
